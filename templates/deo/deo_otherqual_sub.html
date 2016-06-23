@@ -1,0 +1,32 @@
+{% extends "deo/deo_index.html" %}
+{% load l10n %}
+{% load crispy_forms_tags %}
+{% block deo_form_otherqual_sub %}
+{% load bootstrap %}
+        <div>
+        <strong>{{ completion }}</strong>
+        </div>
+        <div>
+        <strong>{{ name }}</strong>
+        </div>
+        <div>
+            {{ relavance }}&nbsp;{{ qname }}
+        </div>
+        <div id="OtherQualification">
+        <div class="col-xs-6 col-sm-6">
+            <form method="post" role="form" action="/ermsapp/DEO/sub_qualification" >
+                {% csrf_token %}
+                <div class="form-group">
+                    {% for field in deo_form %}
+                        {{ field|bootstrap }}
+                    {% endfor %}
+                </div>
+        <div class="main col-lg-12">
+            <div class="col-lg-4"><input type="submit" class="btn btn-primary" value="Next Subject"></div>
+            <div class="col-lg-4"><a href="/ermsapp/DEO/qualification"><input type="button" value="New Qualification" class ="btn btn-success"></a></div>
+            <div class="col-lg-4"><a href="/ermsapp/DEO/skills" data-transition="fade"><input type="button" value="Next" class ="btn btn-success"></a></div>
+        </div>
+            </form>
+        </div>
+        </div>
+{% endblock %}

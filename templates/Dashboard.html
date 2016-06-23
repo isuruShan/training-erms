@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>I love you {{name}} and your {{ hole }}</h1>
+{% if Department|length > 0 %}
+  <table>
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>Department Name</td>
+
+      </tr>
+    </thead>
+    <tbody>
+    {% for Departments in Department %}
+      <tr>
+        <td>{{ Departments.id }}</td>
+        <td>{{ Departments.DeptName }}</td>
+        <!--<td>{{ User.password }}</td>-->
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  <!--<table>
+    {% for Users in UserProfiles %}
+      <tr>
+        <td>{{ Users.id }}</td>
+        <td>{{ Users.FullName }}</td>
+        <td>{{ users.Password }}</td>
+      </tr>
+    {% endfor %}
+  </table>-->
+  {% else %}
+  <span>No project.</span>
+  {% endif %}
+</body>
+</html>
+
+
+

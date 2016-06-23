@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% extends "temp/pages/index.html" %}
+{% block post %}
+    <form action ="/ermsapp/Department/" method="POST" >
+        {% csrf_token %}
+
+        <table>
+        {% for field in DepartmentForm %}
+            <tr><td width="100">{{ field.name }}</td></tr>
+            <tr><td>{{ field }}</td></tr>
+        {% endfor %}
+        </table>
+
+        <input type="submit" value="Next"/>
+    </form>
+{% endblock %}

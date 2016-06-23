@@ -1,0 +1,51 @@
+{% extends "deo/deo_index.html" %}
+{% load crispy_forms_tags %}
+{% block deo_form_OoA %}
+{% load bootstrap %}
+        <div>
+        <strong>{{ completion }}</strong>
+        </div>
+        <div id="DegreeChoice">
+        <div class="col-xs-6 col-sm-6">
+            <form method="post" action="OLoAL"  class="col-sm-12" role="form">
+                {% csrf_token %}
+                <h3><b>Ordinary Level</b></h3><br><br>
+                    <div class="main col-lg-12">
+                        <div class="col-lg-9">
+                            {{ deo_form_ol1.Subject|bootstrap }}
+                            {{ deo_form_ol2.Subject|bootstrap }}
+                            {{ deo_form_ol3.Subject|bootstrap }}
+                            {{ deo_form_ol4.Subject|bootstrap }}
+                            {{ deo_form_ol5.Subject|bootstrap }}
+                            {{ deo_form_ol6.Subject|bootstrap }}
+                            {{ deo_form_ol7.Subject|bootstrap }}
+                            {{ deo_form_ol8.Subject|bootstrap }}
+                            {{ deo_form_ol9.Subject|bootstrap }}
+                            {{ deo_form_ol10.Subject|bootstrap }}
+                        </div>
+                        <div class="col-lg-3">
+                            {{ deo_form_ol1.SubResult|bootstrap }}
+                            {{ deo_form_ol2.SubResult|bootstrap }}
+                            {{ deo_form_ol3.SubResult|bootstrap }}
+                            {{ deo_form_ol4.SubResult|bootstrap }}
+                            {{ deo_form_ol5.SubResult|bootstrap }}
+                            {{ deo_form_ol6.SubResult|bootstrap }}
+                            {{ deo_form_ol7.SubResult|bootstrap }}
+                            {{ deo_form_ol8.SubResult|bootstrap }}
+                            {{ deo_form_ol9.SubResult|bootstrap }}
+                            {{ deo_form_ol10.SubResult|bootstrap }}
+                        </div>
+
+                    </div>
+
+
+                <br><br>
+                <h3><b>Advanced Level</b></h3><br><br>
+
+                <br><br>
+                <div col-lg-6><input type="submit" class="btn btn-primary btn-block" value="Next"></div>
+
+            </form>
+        </div>
+        </div>
+{% endblock %}

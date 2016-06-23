@@ -1,0 +1,57 @@
+{% extends "deo/deo_index.html" %}
+{% load l10n %}
+{% load crispy_forms_tags %}
+{% block deo_form_personal %}
+{% load bootstrap %}
+
+        <div>
+        <strong>{{ completion }}</strong>
+        </div>
+        <div>
+        <strong>{{ name }}</strong>
+        </div>
+        <div id="personal">
+
+            <form method="post" role="form" action="/ermsapp/DEO/personal_info" enctype="multipart/form-data" >
+                {% csrf_token %}
+                <div class="main col-lg-12 myHalfCol">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                        {{ deo_form.FName|bootstrap }}
+                        {{ deo_form.LName|bootstrap }}
+                        {{ deo_form.FullName|bootstrap }}
+                        {{ deo_form.NIC|bootstrap }}
+                        {{ deo_form.DOB|bootstrap }}
+                        {{ deo_form.Nationality|bootstrap }}
+                        {{ deo_form.PImage|bootstrap }}
+                        {{ deo_form.CVPDF|bootstrap }}
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        {{ deo_form.AddressLine1|bootstrap }}
+                        {{ deo_form.AddressLine2|bootstrap }}
+                        {{ deo_form.AddressLine3|bootstrap }}
+                        {{ deo_form.AddressLine4|bootstrap }}
+                        {{ deo_form.ContactNum|bootstrap }}
+                        {{ deo_form.Email|bootstrap }}
+                        {{ deo_form.FacebookProf|bootstrap }}
+                        {{ deo_form.LinkedInProf|bootstrap }}
+
+                    </div>
+
+                </div>
+                 <div class="main col-lg-12 myHalfCol">
+                {{ deo_form.Objective|bootstrap }}
+                {{ deo_form.SpecialNotes|bootstrap }}
+                 </div>
+
+                <div class="main col-lg-12 myHalfCol">
+                    <input type="submit" class="btn btn-primary btn-block" value="Next" width="50" height="30">
+
+                </div>
+
+            </form>
+
+        </div>
+{% endblock %}
